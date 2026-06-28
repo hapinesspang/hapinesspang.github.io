@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Room Observatory</title>
+  <meta name="description" content="My Room Observatory is an iPhone and iPad sky guide that gives a practical Tonight Score, visible space station passes, meteor windows, widgets, rare useful alerts, and Shortcuts.">
+  <link rel="canonical" href="https://hapinesspang.github.io/my-room-observatory/">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="My Room Observatory">
+  <meta property="og:title" content="My Room Observatory">
+  <meta property="og:description" content="Know if tonight is worth stepping outside with one practical sky score, useful windows, widgets, alerts, and Shortcuts.">
+  <meta property="og:url" content="https://hapinesspang.github.io/my-room-observatory/">
+  <meta property="og:image" content="https://hapinesspang.github.io/my-room-observatory/assets/hero-tonight-score.png">
+  <meta property="og:image:alt" content="My Room Observatory showing a Tonight Score and space station pass briefing">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="My Room Observatory">
+  <meta name="twitter:description" content="Know if tonight is worth stepping outside with one practical sky score, useful windows, widgets, alerts, and Shortcuts.">
+  <meta name="twitter:image" content="https://hapinesspang.github.io/my-room-observatory/assets/hero-tonight-score.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "My Room Observatory",
+    "operatingSystem": "iOS",
+    "applicationCategory": "LifestyleApplication",
+    "description": "A simple iPhone and iPad sky guide that answers whether tonight is worth stepping outside.",
+    "inLanguage": ["en", "ko"],
+    "url": "https://hapinesspang.github.io/my-room-observatory/"
+  }
+  </script>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7faf9;
+      --fg: #13202d;
+      --muted: #546170;
+      --line: #dfe7ef;
+      --panel: #ffffff;
+      --accent: #0e7c78;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f171d;
+        --fg: #edf4f5;
+        --muted: #a9b8bd;
+        --line: #2b3a42;
+        --panel: #162128;
+        --accent: #5bd5cd;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.62;
+    }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 48px 20px 72px;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(240px, 360px);
+      gap: 28px;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+    }
+    h1 {
+      font-size: clamp(2.2rem, 8vw, 4.4rem);
+      line-height: 1.05;
+      margin: 0 0 14px;
+      letter-spacing: 0;
+    }
+    h2 {
+      font-size: 1.35rem;
+      margin: 0 0 10px;
+    }
+    p, li { color: var(--muted); }
+    a { color: var(--accent); }
+    .lead {
+      font-size: 1.15rem;
+      max-width: 720px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin: 28px 0;
+    }
+    article {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .hero img {
+      display: block;
+      width: 100%;
+      max-width: 360px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 60px rgba(5, 18, 32, 0.22);
+    }
+    @media (max-width: 760px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" aria-label="App overview">
+      <header>
+        <h1>My Room Observatory</h1>
+        <p class="lead">A simple iPhone and iPad sky guide that answers one practical question: is tonight worth stepping outside?</p>
+        <p>Open the app for a Tonight Score, a tonight timeline, the strongest naked-eye target, the best window, and quick viewing tips for space station passes, the Moon, Venus when visible, and meteor windows.</p>
+        <p>Built for quick naked-eye checks, Home Screen and Lock Screen widgets, rare useful alerts, and Shortcuts. English is the default language, with Korean localization included.</p>
+        <div class="links">
+          <a href="support.html">Support</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+      </header>
+      <img src="assets/hero-tonight-score.png" alt="My Room Observatory showing a Tonight Score and space station pass briefing">
+    </section>
+
+    <section class="grid" aria-label="Features">
+      <article>
+        <h2>Tonight Score</h2>
+        <p>See a practical score based on sky conditions, moonlight, space station visibility, Venus visibility, and seasonal meteor shower windows.</p>
+      </article>
+
+      <article>
+        <h2>Tonight Timeline</h2>
+        <p>See the current call, the viewing window, and one useful reminder in a simple order.</p>
+      </article>
+
+      <article>
+        <h2>Best Target and Tips</h2>
+        <p>Know what to look for first, where to look, how long to try, and what to check before stepping out for space station passes, meteors, Venus, or the Moon.</p>
+      </article>
+
+      <article>
+        <h2>Widgets, Alerts, and Shortcuts</h2>
+        <p>Keep tonight's sky call on your Home Screen or Lock Screen, schedule reminders for strong viewing opportunities, and open Tonight Score or the 7-night outlook from Shortcuts.</p>
+      </article>
+
+      <article>
+        <h2>No Account</h2>
+        <p>The app works without an account or custom backend server. Choose a privacy-first starter city before granting location, switch to precise local results when you are ready, and switch back to starter-city sky calls from Settings later.</p>
+      </article>
+
+      <article>
+        <h2>English and Korean</h2>
+        <p>Use the app in English by default or with Korean localization, including store listing, widgets, alerts, and viewing guidance.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>한국어 안내</h2>
+      <p>내 방 천문대는 복잡한 별자리 지도가 아니라, 오늘 밤 밖에 나가볼 만한지 빠르게 판단해 주는 별보기 앱입니다. 오늘 밤 점수, 오늘 밤 순서, 최고 대상, 빠른 관측 팁, 먼저 볼 곳, 몇 분 볼지, 나가기 전 체크, 보기 좋은 국제우주정거장(ISS) 통과, 보일 때의 금성 확인, 유성우 창, 위젯, 알림, 단축어를 중심으로 제공합니다. 위치 권한 없이 기본 도시를 고르고 먼저 시작할 수 있고, 위치를 허용한 뒤에도 설정에서 기본 도시 기준으로 다시 전환할 수 있으며, 계정 없이 영어 기본 설정과 한국어 현지화를 함께 제공합니다.</p>
+    </section>
+  </main>
+</body>
+</html>

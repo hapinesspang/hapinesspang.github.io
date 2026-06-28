@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini Block Studio</title>
+  <meta name="description" content="Mini Block Studio is an ad-free iPhone app for guided 42-96 piece 3D mini block builds that start with clear 6-piece steps, remixable starter ideas, and a local shelf.">
+  <meta property="og:title" content="Mini Block Studio">
+  <meta property="og:description" content="Start with a 6-piece cat face, follow real 3D build steps, remix starter ideas, and keep a local shelf. No ads or account required.">
+  <meta property="og:image" content="https://hapinesspang.github.io/mini-block-studio/assets/screenshot-step-viewer.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mini Block Studio">
+  <meta name="twitter:description" content="10 tiny guided 3D block models with 6-piece steps, no ads, and no account required.">
+  <meta name="twitter:image" content="https://hapinesspang.github.io/mini-block-studio/assets/screenshot-step-viewer.png">
+  <link rel="icon" href="/mini-block-studio/assets/app-icon.png">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #152033;
+      --muted: #5f6b80;
+      --line: #dce7f5;
+      --blue: #3f7dd8;
+      --green: #2f9b65;
+      --gold: #d99223;
+      --paper: #f6faff;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f7fbff 0%, #eef6ff 100%);
+      line-height: 1.55;
+    }
+    a { color: var(--blue); }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 22px 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .brand img { width: 44px; height: 44px; border-radius: 10px; }
+    nav { display: flex; gap: 14px; font-size: 15px; font-weight: 650; }
+    nav a { color: var(--muted); text-decoration: none; }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      align-items: center;
+      gap: 42px;
+      padding: 28px 0 60px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue);
+      background: #e8f2ff;
+      border: 1px solid #cfe3ff;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 0.98;
+      letter-spacing: 0;
+      margin: 0 0 18px;
+      max-width: 760px;
+    }
+    .lead {
+      font-size: clamp(19px, 2.4vw, 25px);
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 0 28px;
+    }
+    .hero-proof {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 650px;
+      margin: 0 0 24px;
+    }
+    .proof {
+      display: grid;
+      gap: 2px;
+      min-height: 82px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.74);
+    }
+    .proof strong {
+      display: block;
+      font-size: clamp(17px, 2vw, 22px);
+      line-height: 1.05;
+    }
+    .proof span {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--ink);
+    }
+    .button.primary { background: var(--blue); color: white; border-color: var(--blue); }
+    .store-note {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 12px;
+      max-width: 650px;
+    }
+    .release-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 10px 12px;
+      border: 1px solid #cfe3ff;
+      border-radius: 8px;
+      background: #eef6ff;
+      color: #315f9f;
+      font-size: 14px;
+      font-weight: 750;
+    }
+    .launch-status {
+      display: grid;
+      grid-column: 1 / -1;
+      gap: 10px;
+      margin-top: -22px;
+      padding: 16px;
+      border: 1px solid #cfe3ff;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+    .launch-status strong {
+      display: block;
+      font-size: 16px;
+    }
+    .launch-status span {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
+    }
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .status-grid div {
+      padding: 10px;
+      border-radius: 8px;
+      background: #eef6ff;
+      color: #315f9f;
+      font-size: 13px;
+      font-weight: 800;
+      min-height: 58px;
+    }
+    .screen {
+      position: relative;
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .screen::before {
+      content: "";
+      position: absolute;
+      inset: 40px 0 70px;
+      background: radial-gradient(circle at 30% 28%, rgba(63, 125, 216, 0.18), transparent 34%),
+                  radial-gradient(circle at 74% 74%, rgba(217, 146, 35, 0.16), transparent 34%);
+      border-radius: 32px;
+    }
+    .screen img {
+      position: relative;
+      width: min(390px, 100%);
+      height: auto;
+      border-radius: 28px;
+      box-shadow: 0 28px 60px rgba(42, 69, 110, 0.18);
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      padding: 34px 0 64px;
+    }
+    .feature {
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+    }
+    .feature b { display: block; font-size: 18px; margin-bottom: 8px; }
+    .feature p { color: var(--muted); margin: 0; }
+    .band {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 56px 0;
+    }
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 42px;
+      align-items: center;
+    }
+    h2 { font-size: clamp(30px, 4vw, 44px); line-height: 1.08; margin: 0 0 14px; }
+    .checks {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .check {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fbfdff;
+      font-weight: 700;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      align-items: start;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 40px rgba(42, 69, 110, 0.12);
+    }
+    .preview-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+    .preview-shot {
+      background: #f7fbff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .preview-shot img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+    }
+    .preview-shot b {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .preview-shot span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+    footer {
+      padding: 34px 0 48px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    footer .links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+    @media (max-width: 840px) {
+      header { align-items: flex-start; }
+      nav { flex-wrap: wrap; justify-content: flex-end; }
+      .hero, .split { grid-template-columns: 1fr; }
+      .hero { padding-top: 12px; }
+      .screen { min-height: auto; }
+      .features, .checks, .gallery { grid-template-columns: 1fr; }
+      h1 { font-size: 38px; }
+      .lead { font-size: 18px; }
+      .hero-proof { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+      .proof { min-height: 72px; padding: 9px; }
+      .proof strong { font-size: 14px; line-height: 1.1; }
+      .proof span { font-size: 11px; line-height: 1.2; }
+      .status-grid, .preview-strip { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/mini-block-studio/" aria-label="Mini Block Studio home">
+        <img src="/mini-block-studio/assets/app-icon.png" alt="">
+        <span>Mini Block Studio</span>
+      </a>
+      <nav>
+        <a href="/mini-block-studio/support.html">Support</a>
+        <a href="/privacy/miniblockstudio/">Privacy</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Ad-free 1.0 · 6-piece build steps</div>
+        <h1>Start with a 6-piece cat face, then build the full model.</h1>
+        <p class="lead">Choose compact 42-96 piece models, rotate the 3D guide, restore Best View when the angle gets awkward, tap the highlighted brick, or finish a clear 6-piece step.</p>
+        <div class="hero-proof" aria-label="Launch highlights">
+          <div class="proof"><strong>6-piece face</strong><span>Clear first step</span></div>
+          <div class="proof"><strong>10 models</strong><span>All included</span></div>
+          <div class="proof"><strong>42-96 pieces</strong><span>Quick builds</span></div>
+        </div>
+        <div class="actions">
+          <a class="button primary" href="#screenshots">See the App</a>
+          <a class="button" href="mailto:hapinesspang@gmail.com?subject=Mini%20Block%20Studio%20support">Contact Support</a>
+          <a class="button" href="/privacy/miniblockstudio/">Privacy Policy</a>
+        </div>
+        <p class="store-note">Free, offline-friendly, No account, no ads, no tracking prompt, and no operator server upload for custom builds.</p>
+      </div>
+      <div class="screen" aria-label="Mini Block Studio screenshot">
+        <img src="/mini-block-studio/assets/screenshot-step-viewer.png" alt="Mini Block Studio step viewer showing a 6-piece cat face build">
+      </div>
+      <div class="launch-status" aria-label="Launch readiness status">
+        <strong>App Store 1.0 package prepared locally.</strong>
+        <span>Public store link will appear here after App Store Connect setup, signing, TestFlight upload, and final review.</span>
+        <div class="status-grid">
+          <div>Localized screenshots ready</div>
+          <div>Ad-free privacy posture</div>
+          <div>iPhone release build prepared</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="band" id="screenshots">
+    <div class="wrap split">
+      <div>
+        <h2>Made for short, satisfying build sessions.</h2>
+        <p class="lead">The app starts with Sleepy Cat's 6-piece face so the model reads early, then grows into cozy, food, nature, vehicle, and fantasy builds. Use precise one-brick placement, restore Best View after rotating, finish a 6-piece step, or open Free Studio and remix Cat Face, Tiny House, and Flower Pot starters.</p>
+        <div class="checks">
+          <div class="check">42-96 piece models</div>
+          <div class="check">Best View, Place 1, or Finish Step</div>
+          <div class="check">Starter ideas to remix</div>
+          <div class="check">Local shelf and badges</div>
+        </div>
+        <div class="preview-strip" aria-label="Mini Block Studio app preview">
+          <div class="preview-shot">
+            <img src="/mini-block-studio/assets/screenshot-guided-builds.png" alt="Guided model library with Sleepy Cat">
+            <b>Guided builds</b>
+            <span>10 included models</span>
+          </div>
+          <div class="preview-shot">
+            <img src="/mini-block-studio/assets/screenshot-step-viewer.png" alt="Step viewer with Place 1 and Finish Step controls">
+            <b>Step viewer</b>
+            <span>Best View, Place 1, or Finish Step</span>
+          </div>
+          <div class="preview-shot">
+            <img src="/mini-block-studio/assets/screenshot-free-studio.png" alt="Free Studio starter ideas and color controls">
+            <b>Free Studio</b>
+            <span>Remix starter ideas</span>
+          </div>
+        </div>
+      </div>
+      <div class="gallery">
+        <img src="/mini-block-studio/assets/screenshot-guided-builds.png" alt="Mini Block Studio guided model library">
+        <img src="/mini-block-studio/assets/screenshot-step-viewer.png" alt="Mini Block Studio step viewer with Place 1 and Finish Step controls">
+        <img src="/mini-block-studio/assets/screenshot-free-studio.png" alt="Mini Block Studio Free Studio starter ideas">
+        <img src="/mini-block-studio/assets/screenshot-guided-builds-ko.png" alt="Korean guided model library screenshot">
+        <img src="/mini-block-studio/assets/screenshot-step-viewer-ko.png" alt="Korean step viewer screenshot">
+        <img src="/mini-block-studio/assets/screenshot-free-studio-ko.png" alt="Korean Free Studio starter ideas screenshot">
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="features" aria-label="Features">
+      <div class="feature">
+        <b>Readable first steps</b>
+        <p>Sleepy Cat starts with a 6-piece face, then each model advances through small steps with a Best View reset if rotation gets confusing.</p>
+      </div>
+      <div class="feature">
+        <b>Start from ideas</b>
+        <p>Cat Face, Tiny House, and Flower Pot starters make Free Studio easy to try immediately.</p>
+      </div>
+      <div class="feature">
+        <b>Built for iPhone</b>
+        <p>A focused SwiftUI app with localized English and Korean App Store assets.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div>Support email: <a href="mailto:hapinesspang@gmail.com">hapinesspang@gmail.com</a></div>
+      <div class="links">
+        <a href="/mini-block-studio/support.html">Support</a>
+        <a href="/privacy/miniblockstudio/">Privacy Policy</a>
+        <a href="/">More apps</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

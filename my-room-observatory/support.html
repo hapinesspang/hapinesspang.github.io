@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Room Observatory Support</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #13202d;
+      --muted: #546170;
+      --line: #dfe7ef;
+      --panel: #f6f9fc;
+      --accent: #0e9f9a;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 840px;
+      margin: 40px auto;
+      padding: 0 20px 56px;
+      line-height: 1.62;
+      color: var(--ink);
+      background: #ffffff;
+    }
+    h1, h2 { color: #07111f; line-height: 1.2; }
+    h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 8px; }
+    h2 { margin-top: 32px; }
+    p, li { color: var(--muted); }
+    a { color: var(--accent); }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin: 24px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Room Observatory Support</h1>
+  <div class="hero">
+    <p>My Room Observatory gives a simple Tonight Score, highlights the best naked-eye target, and shows quick viewing tips for the Moon, Venus checks when visible, visible International Space Station passes, and meteor shower windows.</p>
+  </div>
+
+  <h2>Common Questions</h2>
+  <ul>
+    <li><strong>Why does the app ask for location?</strong> Local position is needed to estimate sky conditions and visible International Space Station pass timing. You can continue with a regional starter city if you prefer, and you can switch back to starter-city sky calls from Settings after granting location.</li>
+    <li><strong>What does the Tonight Score mean?</strong> It is a 0-100 practical viewing score for whether tonight is worth stepping outside. Sky conditions, moonlight, space station visibility, Venus visibility, and meteor windows push the score up or down.</li>
+    <li><strong>What is a visible ISS pass?</strong> It is a pass of the International Space Station that may be bright enough to see with the naked eye when timing, height, duration, sky conditions, and local darkness line up.</li>
+    <li><strong>What is the space station pass score?</strong> It rates whether the next visible ISS pass is worth waiting for, using timing, height above the horizon, duration, sky conditions, and whether your sky is dark enough.</li>
+    <li><strong>What are quick viewing tips?</strong> The Tonight tab shows simple target-specific guidance, such as stepping out early for a space station pass, waiting for dark adaptation during meteor showers, or checking a low open horizon when Venus is visible.</li>
+    <li><strong>Why does the score change?</strong> Weather, CelesTrak public space station orbit data, moonlight, and the time of night can change the practical viewing call.</li>
+    <li><strong>Does the app need an account?</strong> No. The app works without an account and without a custom backend server.</li>
+    <li><strong>How do widgets update?</strong> Open the app once to refresh the latest Tonight Score, then the widget can show the most recent local snapshot.</li>
+    <li><strong>How do I add the widget?</strong> Refresh Today once, then touch and hold the Home Screen or Lock Screen, open the widget gallery, and choose Tonight Sky.</li>
+    <li><strong>Does the app support Shortcuts?</strong> Yes. Shortcuts can open the Tonight Score or the 7-night Outlook so you can check the sky from system surfaces.</li>
+  </ul>
+
+  <h2>한국어 안내</h2>
+  <ul>
+    <li><strong>오늘 밤 점수는 무엇인가요?</strong> 오늘 밤 실제로 밖에 나가볼 만한지 0-100점으로 보여주는 실사용 점수입니다. 하늘 상태, 달빛, 국제우주정거장(ISS) 보기 가능성, 금성 가시성, 유성우 창을 함께 봅니다.</li>
+    <li><strong>보기 좋은 국제우주정거장(ISS) 통과는 무엇인가요?</strong> 국제우주정거장이 맨눈으로 보일 가능성이 있는 통과입니다. 너무 낮거나 짧은 통과보다, 하늘 위로 충분히 높게 오래 지나가고 내 위치의 하늘이 충분히 어두운 통과를 더 좋게 봅니다.</li>
+    <li><strong>보기 좋은 우주정거장 통과 점수는 무엇인가요?</strong> 국제우주정거장(ISS)은 하늘에서 밝게 움직이는 점처럼 보입니다. 이 보조 점수는 다음 통과를 기다려볼 만한지 시간대, 지평선 위 높이, 지속 시간, 하늘 상태, 내 위치의 어두운 정도를 기준으로 판단합니다.</li>
+    <li><strong>위젯은 어떻게 갱신되나요?</strong> 앱을 열어 오늘 밤 점수를 새로 고치면, 홈 화면 및 잠금 화면 위젯이 가장 최근의 로컬 스냅샷을 표시할 수 있습니다.</li>
+    <li><strong>위젯은 어떻게 추가하나요?</strong> 오늘 화면을 한 번 새로고침한 뒤 홈 화면이나 잠금 화면을 길게 누르고, 위젯 갤러리에서 오늘 밤 하늘을 선택하세요.</li>
+    <li><strong>단축어를 지원하나요?</strong> 네. 단축어에서 오늘 밤 점수나 7일 전망을 바로 열 수 있어요.</li>
+    <li><strong>위치 권한이 꼭 필요한가요?</strong> 정확한 하늘 판단에는 현재 위치가 가장 좋지만, 권한을 바로 주지 않아도 출시 지역에 맞춘 기본 도시로 먼저 써볼 수 있습니다. 위치를 허용한 뒤에도 설정에서 기본 도시 기준으로 다시 바꿀 수 있습니다.</li>
+    <li><strong>앱 알림만 끌 수 있나요?</strong> 네. 앱 설정에서 앱이 관리하는 유용한 알림을 끌 수 있습니다. 이 동작은 오늘 밤/전망 알림 예약만 지우며, iOS 알림 권한 자체를 끄지는 않습니다.</li>
+    <li><strong>ISS 데이터는 어디서 오나요?</strong> ISS 통과 계산은 CelesTrak의 공개 궤도 데이터를 받아 기기에서 예측합니다. 저장된 데이터가 오래되면 알림과 시간 안내를 보수적으로 제한합니다.</li>
+  </ul>
+
+  <h2>Troubleshooting</h2>
+  <ul>
+    <li>If the app shows a regional starter city, open Settings in the app and update location permission for a more local sky call. If you prefer privacy-first checks later, use Settings to switch sky calls back to the starter city.</li>
+    <li>If ISS data is unavailable, open the app with an internet connection and refresh tonight. The app uses public CelesTrak orbit data and limits stale cached timing until it can update.</li>
+    <li>If alerts do not arrive, confirm notification permission in iOS Settings and schedule a reminder from the Tonight tab. To stop only the app-managed useful alerts, use Settings inside the app.</li>
+    <li>If ads or privacy options look incorrect, update the app and review your iOS privacy and tracking settings.</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>For support, feedback, or privacy questions, contact <a href="mailto:hapinesspang@gmail.com">hapinesspang@gmail.com</a>.</p>
+  <p><a href="privacy-policy.html">Privacy Policy</a></p>
+</body>
+</html>
