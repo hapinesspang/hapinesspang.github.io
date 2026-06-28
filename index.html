@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>hapinesspang Apps</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f8f8;
+      --fg: #16262c;
+      --muted: #5a6a70;
+      --line: #d9e0e2;
+      --panel: #ffffff;
+      --accent: #157f7a;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #101719;
+        --fg: #edf3f3;
+        --muted: #a9b8bd;
+        --line: #2b3a3f;
+        --panel: #162024;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 48px 20px 72px;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+    }
+    h1 {
+      font-size: 34px;
+      line-height: 1.2;
+      margin: 0 0 10px;
+    }
+    h2 {
+      font-size: 22px;
+      margin: 0 0 10px;
+    }
+    .meta, .note { color: var(--muted); }
+    .apps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    article {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+    }
+    ul { padding-left: 22px; }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>hapinesspang Apps</h1>
+      <p class="meta">Support and privacy policy pages for published iPhone apps.</p>
+    </header>
+
+    <section class="apps" aria-label="Apps">
+      <article>
+        <h2>한국사 빈칸퀴즈</h2>
+        <p>한국사 빈칸퀴즈는 한국사 핵심 내용을 빈칸 문제로 학습하는 iPhone 및 iPad 앱입니다.</p>
+        <p class="note">학습 기록과 오답 기록은 기기 내부에 저장되며, 앱은 회원 가입이나 자체 서버 계정을 사용하지 않습니다.</p>
+        <div class="links">
+          <a href="korean-history-blank-quiz/">앱 안내</a>
+          <a href="korean-history-blank-quiz/support.html">지원 페이지</a>
+          <a href="korean-history-blank-quiz/privacy-policy.html">개인정보 처리방침</a>
+        </div>
+      </article>
+
+      <article>
+        <h2>Photo Compress</h2>
+        <p>Photo Compress helps reduce image dimensions and file size on iPhone, then save or share the converted images.</p>
+        <p class="note">Images are processed on device and are not uploaded to an app operator server.</p>
+        <p>Contact: <a href="mailto:hapinesspang@gmail.com">hapinesspang@gmail.com</a></p>
+        <div class="links">
+          <a href="/photo-compress/">App page</a>
+          <a href="/photo-compress/support.html">Support</a>
+          <a href="/photo-compress/privacy-policy.html">Privacy Policy</a>
+        </div>
+      </article>
+
+      <article>
+        <h2>Home Measurement Toolkit</h2>
+        <p>Home Measurement Toolkit provides everyday tools such as a level, angle meter, ruler, compass, sound meter, and saved measurements.</p>
+        <p class="note">Measurements are reference values and may vary by device, sensor state, and environment.</p>
+        <p>Contact: <a href="mailto:hapinesspang@gmail.com">hapinesspang@gmail.com</a></p>
+        <div class="links">
+          <a href="home-measurement-toolkit/">App page</a>
+          <a href="home-measurement-toolkit/support.html">Support</a>
+          <a href="home-measurement-toolkit/privacy-policy.html">Privacy Policy</a>
+        </div>
+      </article>
+
+      <article>
+        <h2>Link Cleaner</h2>
+        <p>Link Cleaner checks URLs, removes common tracking parameters, and keeps recent link history on device.</p>
+        <p class="note">Core link cleanup runs in the app and Safari extension without a developer-operated server account.</p>
+        <p>Contact: <a href="mailto:hapinesspang@gmail.com">hapinesspang@gmail.com</a></p>
+        <div class="links">
+          <a href="link-cleaner/">App page</a>
+          <a href="link-cleaner/support.html">Support</a>
+          <a href="link-cleaner/privacy-policy.html">Privacy Policy</a>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

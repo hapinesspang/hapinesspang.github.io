@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Measurement Toolkit</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f8f8;
+      --fg: #16262c;
+      --muted: #5a6a70;
+      --line: #d9e0e2;
+      --panel: #ffffff;
+      --accent: #157f7a;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #101719;
+        --fg: #edf3f3;
+        --muted: #a9b8bd;
+        --line: #2b3a3f;
+        --panel: #162024;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 56px 20px 64px;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+    }
+    h1 {
+      font-size: 36px;
+      line-height: 1.2;
+      margin: 0 0 12px;
+    }
+    h2 {
+      font-size: 21px;
+      margin: 32px 0 10px;
+    }
+    ul { padding-left: 22px; }
+    .meta, .note { color: var(--muted); }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Home Measurement Toolkit</h1>
+      <p class="meta">A quick iPhone utility for checking level, angle, length, direction, and surrounding sound level.</p>
+      <div class="links">
+        <a href="support.html">Support</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+    </header>
+
+    <section class="panel">
+      <p>Home Measurement Toolkit combines a level, angle meter, ruler, compass, sound meter, and saved measurement history in one iPhone app.</p>
+      <p class="note">Measurements are for everyday reference only. Values may vary by device, case, environment, and sensor conditions, and are not a substitute for professional measuring equipment.</p>
+    </section>
+
+    <h2>Main Features</h2>
+    <ul>
+      <li>Check tilt and angle with the level and angle meter</li>
+      <li>Use the on-screen ruler for quick reference length checks</li>
+      <li>View magnetic north direction with the compass</li>
+      <li>Reference surrounding sound level with the sound meter</li>
+      <li>Save and delete measurement records on your device</li>
+    </ul>
+
+    <h2>Privacy and Ads</h2>
+    <p>The app does not require account creation or login. Saved measurement records remain on your device, and the app does not send measurement records to a developer-operated server.</p>
+    <p>The app may show Google AdMob ads to keep it free. It does not offer in-app purchases or subscriptions. Personalized ads are used only when permitted by the user, and all measurement tools, saved records, and settings remain available even if tracking is not allowed.</p>
+
+    <h2>Contact</h2>
+    <p>For app support, contact <a href="mailto:hapinesspang@gmail.com">hapinesspang@gmail.com</a>.</p>
+  </main>
+</body>
+</html>
