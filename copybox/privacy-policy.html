@@ -1,61 +1,245 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CopyBox Privacy Policy</title>
+  <title>CopyBox · CopyBox 개인정보처리방침 / Privacy Policy</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 780px; margin: 0 auto; padding: 40px 20px; line-height: 1.7; color: #1d1d1f; }
-    h1, h2 { line-height: 1.25; letter-spacing: 0; }
-    code { background: #f2f2f7; padding: 2px 6px; border-radius: 6px; }
+    :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.65; }
+    body { max-width: 980px; margin: 0 auto; padding: 32px 18px 72px; background: Canvas; color: CanvasText; }
+    nav { position: sticky; top: 0; padding: 12px 0; background: Canvas; border-bottom: 1px solid color-mix(in srgb, CanvasText 18%, transparent); }
+    nav a { margin-right: 16px; }
+    section.language { padding-top: 24px; }
+    h1, h2, h3 { line-height: 1.3; }
+    h2 { margin-top: 32px; }
+    table { width: 100%; border-collapse: collapse; display: block; overflow-x: auto; }
+    th, td { min-width: 130px; padding: 10px; text-align: left; vertical-align: top; border: 1px solid color-mix(in srgb, CanvasText 20%, transparent); }
+    .meta, .note { color: color-mix(in srgb, CanvasText 72%, transparent); }
+    code { overflow-wrap: anywhere; }
   </style>
 </head>
 <body>
-  <h1>CopyBox Privacy Policy</h1>
-  <p>Effective date: July 9, 2026</p>
+  <nav aria-label="Language"><a href="#ko">한국어</a><a href="#en">English</a></nav>
 
-  <h2>Information CopyBox Does Not Collect</h2>
-  <p>CopyBox does not send saved clip text, snippets, queue names, or keyboard input to a developer-operated server. CopyBox does not use its own account system or developer backend.</p>
+  <section id="ko" class="language" lang="ko">
+    <h1>CopyBox 개인정보 처리방침</h1>
+    <p class="meta">시행일: 2026-07-10</p>
+    <p>CopyBox는 저장한 클립·스니펫·큐와 키보드 공유용 스냅샷을 App Group UserDefaults에 JSON으로 보관하며 키보드 입력 전체를 수집하거나 운영자 서버로 전송하지 않습니다.</p>
 
-  <h2>On-Device Storage</h2>
-  <p>Saved clips and snippets are stored on the device in an iOS App Group container so the main app and the keyboard extension can access the same library. CopyBox may read and save text only when you explicitly use a save action in the app, keyboard, Share Sheet, or Shortcuts.</p>
+    <h2>1. 개인정보처리자, 보호책임자 및 처리 목적</h2>
+    <ul>
+      <li>개인정보처리자 및 운영자: Yoobin Shin (hapinesspang)</li>
+      <li>개인정보 보호책임자(CPO): Yoobin Shin (hapinesspang)</li>
+      <li>개인정보 문의 및 권리행사: <a href="mailto:hapinesspang@gmail.com">hapinesspang@gmail.com</a></li>
+    </ul>
+    <p>앱은 핵심 기능 제공, 사용자 설정·기록의 기기 내 보관, 광고 제공, 앱 사용 분석, 오류 진단 및 안정성 개선을 위해 필요한 최소 범위의 정보를 처리합니다. 앱은 계정 생성이나 로그인을 제공하지 않습니다. 따라서 삭제할 개발자 계정 데이터가 없습니다.</p>
+    <p>앱은 무료 제공을 위해 Google AdMob 광고를 사용할 수 있습니다. 인앱 결제와 구독은 제공하지 않습니다.</p>
 
-  <h2>Keyboard Extension</h2>
-  <p>The CopyBox keyboard lets you insert saved queues and snippets into text fields. Full Access is requested so the keyboard can read saved queues and snippets from the shared App Group container and update used-state after insertion. The keyboard does not collect everything you type or send typed content to a developer server.</p>
+    <h2>2. 기기 내 처리 정보</h2>
+    <ul>
+        <li>클립 텍스트, 스니펫, 큐 이름·순서·진행, 고정·사용 상태와 시각을 JSON으로 인코딩해 App Group UserDefaults에 저장합니다.</li>
+        <li>메인 앱·키보드·공유 확장이 같은 라이브러리를 사용하도록 별도 키보드 스냅샷도 App Group에 저장합니다.</li>
+        <li>클립보드는 사용자가 저장 동작 또는 단축어를 명시적으로 실행할 때만 읽고 백그라운드에서 계속 감시하지 않습니다.</li>
+        <li>단축어는 사용자가 제공한 텍스트 추가, 다음 큐 항목 복사, 큐 진행 초기화 또는 앱 열기를 수행할 수 있습니다.</li>
+        <li>App Group JSON은 iOS 샌드박스·기기 데이터 보호를 받지만 앱이 추가로 자체 암호화하는 형식은 아닙니다. 비밀번호·인증번호·금융정보 같은 민감정보는 저장하지 않는 것이 안전합니다.</li>
+    </ul>
+    <table>
+      <thead><tr><th>항목</th><th>목적</th><th>저장 위치</th><th>보유기간</th><th>삭제 방법</th></tr></thead>
+      <tbody>
+        <tr><td>클립·스니펫 텍스트, 큐 이름·순서·진행, 고정·사용 상태와 시각</td><td>클립 저장·정리·순차 붙여넣기</td><td>App Group UserDefaults의 copybox.library.v1 JSON</td><td>사용자가 항목·큐를 삭제하거나 앱을 삭제할 때까지</td><td>앱에서 항목·큐 삭제 또는 앱 삭제</td></tr>
+        <tr><td>키보드 표시용 클립·큐 스냅샷</td><td>키보드 확장에서 빠른 조회·붙여넣기</td><td>App Group UserDefaults의 copybox.keyboardSnapshot.v1 JSON</td><td>라이브러리가 갱신·삭제되거나 앱을 삭제할 때까지</td><td>원본 라이브러리 항목 변경·삭제 또는 앱 삭제</td></tr>
+      </tbody>
+    </table>
+    <p>운영자는 위 기기 내 콘텐츠를 자체 서버로 수집하지 않으며 다음 정보를 광고·분석·진단 이벤트에 의도적으로 포함하지 않습니다.</p>
+    <ul>
+        <li>저장한 클립·스니펫 텍스트와 큐 이름</li>
+        <li>키보드에서 사용자가 입력하는 내용</li>
+        <li>클립보드 원문, URL·이메일·직접 입력한 콘텐츠</li>
+    </ul>
 
-  <h2>Ads</h2>
-  <p>CopyBox may show Google AdMob ads in the main app. The Google Mobile Ads SDK may process device identifiers, ad data, usage data, and diagnostics for ad delivery, measurement, fraud prevention, and ad quality. CopyBox does not provide saved clip text to Google or to a developer server for ad targeting.</p>
+    <h2>3. 권한과 선택권</h2>
+    <table>
+      <thead><tr><th>권한/선택</th><th>사용 목적</th><th>거부 시 영향</th></tr></thead>
+      <tbody>
+        <tr><td>키보드 전체 접근</td><td>App Group의 저장 큐·스니펫 읽기와 붙여넣기 후 사용 상태 갱신</td><td>CopyBox 키보드의 공유 라이브러리·진행 동기화 기능이 제한되며 메인 앱은 사용할 수 있습니다.</td></tr>
+        <tr><td>클립보드 읽기</td><td>사용자가 저장 동작 또는 단축어를 실행할 때 현재 텍스트 저장</td><td>클립보드에서 저장하는 동작만 사용할 수 없습니다.</td></tr>
+        <tr><td>App Tracking Transparency(ATT)</td><td>허용 시 개인화 광고와 광고 성과 측정</td><td>클립·키보드 기능은 유지되고 광고가 비개인화·제한될 수 있습니다.</td></tr>
+      </tbody>
+    </table>
+    <p>ATT는 Apple의 추적 권한이며 개인정보 국외 이전에 관한 별도 동의를 대신하지 않습니다. 사용자가 추적을 허용하면 광고 식별자(IDFA)가 개인화 광고와 광고 성과 측정에 사용될 수 있습니다. 추적을 거부해도 앱의 핵심 기기 내 기능은 사용할 수 있으며 광고는 개인화되지 않거나 제한된 형태로 표시될 수 있습니다.</p>
 
-  <h2>Analytics and Crash Reports</h2>
-  <p>CopyBox uses Firebase Analytics and Firebase Crashlytics in the main app to understand aggregate feature usage and diagnose crashes. Analytics events and crash reports do not include saved clip text, snippets, queue names, keyboard input, URLs, email addresses, or manually entered content. Firebase may process app identifiers, device and OS information, product interaction events, crash data, diagnostics, and performance information for analytics and app quality purposes.</p>
+    <h2>4. 광고, 분석 및 충돌 진단</h2>
+    <p>사용 SDK/서비스: Google AdMob / Google Mobile Ads SDK, Google User Messaging Platform SDK (UMP), Apple App Tracking Transparency (ATT), Google Analytics for Firebase (Firebase Analytics), Firebase Crashlytics</p>
+    <ul>
+      <li>광고: IP 주소로 추정한 대략적 위치, 광고 식별자 또는 앱 인스턴스 식별자, 기기 ID, 광고 노출 및 상호작용 정보, 광고 요청 및 광고 성과 관련 정보</li>
+      <li>분석: 앱 실행, 화면 이동, 기능 사용 같은 제품 상호작용과 앱 사용 상호작용 정보, 앱 인스턴스 식별자, 기기·앱 버전 정보</li>
+      <li>충돌 진단: 충돌 스택, 개인정보 안전 오류 코드, 앱·OS·기기 정보, 설치/세션 식별자, 충돌, 진단 및 성능 정보</li>
+    </ul>
+    <p>앱별 기기 내 콘텐츠 경계는 2항을 따릅니다. 운영자가 정의하는 분석 이벤트와 오류 메타데이터에는 해당 콘텐츠, 파일명 또는 파일 경로를 넣지 않는 것을 원칙으로 합니다.</p>
 
-  <h2>Third-Party Services and International Processing</h2>
-  <p>CopyBox may use the following third-party services, which may be provided by Google LLC or its affiliates:</p>
-  <ul>
-    <li>Google AdMob</li>
-    <li>Google Mobile Ads SDK</li>
-    <li>Google User Messaging Platform (UMP) SDK</li>
-    <li>Google Firebase</li>
-    <li>Google Analytics for Firebase</li>
-    <li>Firebase Analytics</li>
-    <li>Firebase Crashlytics</li>
-  </ul>
-  <p>CopyBox uses Google LLC services, including Google AdMob, Google Mobile Ads SDK, Google User Messaging Platform SDK, Firebase Analytics, and Firebase Crashlytics, for ad delivery, ad performance measurement, app usage analytics, error diagnosis, and stability improvement.</p>
-  <p>During this processing, device identifiers, advertising identifiers if allowed by the user, ad impressions and ad interaction information, product interaction information such as app launches and screen navigation, approximate location inferred from IP address, crash logs, performance data, and other diagnostic information may be processed or stored outside the user's country or region through Google LLC and its subprocessors.</p>
-  <ul>
-    <li>Recipient: Google LLC</li>
-    <li>Countries or regions: United States and other countries or regions where Google services are provided</li>
-    <li>Timing and method: transmitted over the network during app use, including ad requests, analytics event transmission, and error or crash reporting</li>
-    <li>Purposes: ad delivery, personalized ads and ad performance measurement where allowed by user consent and device settings, app usage analytics, error diagnosis, and service stability improvement</li>
-    <li>Retention period: for the period determined by Google policies and service settings, or until the processing purpose is fulfilled</li>
-    <li>How to limit processing: users can limit personalized ads and tracking through Apple's App Tracking Transparency (ATT), the ad consent screen where available, and device advertising settings. Some advertising, analytics, and error diagnosis processing may continue in a limited form.</li>
-  </ul>
-  <p>For more information about Google's privacy practices, see the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>, <a href="https://admob.google.com/">Google AdMob</a>, and <a href="https://firebase.google.com/">Firebase</a>.</p>
+    <h2>5. 처리위탁·SDK 직접수집 및 제3자 제공의 구분</h2>
+    <table>
+      <thead><tr><th>구분</th><th>받는 자/수탁자</th><th>서비스와 목적</th><th>처리 방법</th></tr></thead>
+      <tbody>
+        <tr><td>처리위탁 및 SDK 직접수집</td><td>Google LLC 및 공개된 하위처리업체</td><td>AdMob·UMP 광고 제공/동의 관리, Firebase Analytics 사용 분석, Firebase Crashlytics 오류 진단</td><td>앱 사용 중 SDK가 필요한 정보를 암호화된 네트워크 연결로 직접 전송</td></tr>
+        <tr><td>제3자 제공</td><td>없음</td><td>운영자가 보유한 기기 내 콘텐츠를 판매하거나 별도 제3자에게 제공하지 않음</td><td>해당 없음</td></tr>
+      </tbody>
+    </table>
+    <p>Google SDK 연동은 개별 서비스 약관과 설정에 따라 운영자가 맡긴 처리위탁·보관과 Google의 직접수집이 함께 포함될 수 있습니다. 아래 국외 처리 근거는 운영자가 Google에 처리를 맡기는 범위에 적용하며, Google이 독립된 개인정보처리자로 직접 수집하는 범위는 Google의 약관·처리방침과 적용 법령을 따릅니다. 두 경우 모두 사용자가 실제 SDK 처리를 알 수 있도록 함께 공개합니다.</p>
 
-  <h2>Clipboard Access</h2>
-  <p>CopyBox does not continuously monitor or collect the clipboard in the background. The app reads clipboard text when you choose a save action or run a Shortcuts action that saves the clipboard. Shortcuts may also add text you provide, copy the next saved queue item, reset queue progress, or open the app.</p>
+    <h2>6. Google을 통한 개인정보 국외 처리</h2>
+    <ul>
+      <li>운영자가 처리위탁·보관하는 범위의 법적 근거: 서비스 제공 계약의 체결·이행에 필요한 경우 개인정보 보호법 제28조의8 제1항 제3호 가목과 처리방침 공개, 별도 국외 이전 동의를 받는 경우 같은 항 제1호</li>
+      <li>Google 직접수집 범위: 개인정보보호위원회 안내에 따르면 국외 사업자가 정보주체로부터 직접 수집하는 행위는 국내 개인정보처리자의 국외이전과 구분됩니다. 이 범위는 Google의 개인정보처리방침과 적용 법령에 따르며, 본 방침은 투명성을 위해 관련 SDK 처리 내용을 함께 알립니다.</li>
+      <li>이전받는 자: Google LLC 및 Google이 공개한 하위처리업체</li>
+      <li>연락 방법: <a href="https://support.google.com/policies/answer/9581826?hl=ko">Google 개인정보 보호 고객센터</a>, <a href="https://firebase.google.com/support/privacy/dpo">Firebase Data Protection Team</a></li>
+      <li>이전 항목: 4항의 광고, 앱 인스턴스/기기 식별, 제품 상호작용, 대략적 위치, 충돌 및 진단 정보</li>
+      <li>이전 국가: 미국을 포함하여 Google 또는 하위처리업체가 시설을 운영하는 국가. Firebase는 위치 선택 기능이 없는 서비스의 경우 글로벌 Google 인프라에서 처리할 수 있습니다. 현재 위치는 <a href="https://www.google.com/about/datacenters/locations/">Google 데이터센터</a> 및 <a href="https://firebase.google.com/terms/subprocessors">Firebase 하위처리업체</a> 목록에서 확인할 수 있습니다.</li>
+      <li>이전 시기·방법: 앱 사용 중 광고 요청, 동의 상태 갱신, 분석 이벤트 전송, 오류·충돌 보고 시 암호화된 네트워크 통신</li>
+      <li>목적: 광고 제공·성과 측정·부정 이용 방지, 동의 관리, 사용 분석, 오류 진단 및 안정성 개선</li>
+      <li>보유기간: Firebase Analytics 사용자/이벤트 수준 데이터는 운영자가 Firebase에서 설정한 기간(최대 14개월), Crashlytics 충돌 스택과 관련 식별자는 90일 후 삭제 절차를 시작합니다. 광고 데이터와 집계·법정 보존 정보는 Google 정책·서비스 설정 또는 목적 달성 시까지 보관됩니다.</li>
+      <li>거부 방법 및 효과: ATT·UMP 개인정보 옵션·iOS 광고 설정에서 개인화 광고와 추적을 제한할 수 있고, 운영자 이메일로 권리행사를 요청할 수 있습니다. 거부해도 핵심 기기 내 기능은 사용할 수 있으나 광고가 제한되거나 비개인화될 수 있고, 분석·오류 진단의 일부 처리는 서비스 제공에 필요한 범위에서 계속될 수 있습니다. 앱 삭제 시 향후 SDK 전송은 중단되지만 이미 이전된 정보는 Google 보유정책에 따라 삭제됩니다.</li>
+    </ul>
+    <p>관련 문서: <a href="https://policies.google.com/privacy?hl=ko">Google 개인정보처리방침</a>, <a href="https://firebase.google.com/support/privacy">Firebase 개인정보 및 보안</a>, <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">Google Mobile Ads 데이터 공개</a></p>
 
-  <h2>Contact</h2>
-  <p>For support or privacy questions, contact <a href="mailto:hapinesspang@gmail.com">hapinesspang@gmail.com</a> or visit the <a href="support.html">support page</a>.</p>
+    <h2>7. 보유기간, 데이터 삭제 및 파기</h2>
+    <p>기기 내 정보는 2항의 기간 동안 보관되며 사용자가 앱 기능에서 삭제하거나 앱을 삭제하면 iOS 동작 방식에 따라 제거됩니다. 운영자가 별도 원본 사본을 보유하지 않으므로 복구할 수 없습니다. 임시 파일은 목적 달성 후 즉시 또는 앱별로 명시한 정리 시점에 파일 삭제 방식으로 파기합니다. Google 처리 정보는 6항의 기간과 Google 삭제 절차를 따릅니다.</p>
+
+    <h2>8. 정보주체의 권리와 행사 방법</h2>
+    <p>사용자는 앱 안에서 기기 내 정보를 열람·정정·삭제·초기화할 수 있습니다. 개인정보의 열람, 정정·삭제, 처리정지, 동의 철회 또는 국외 처리 관련 문의는 <a href="mailto:hapinesspang@gmail.com">hapinesspang@gmail.com</a>로 요청할 수 있습니다. 운영자는 필요한 경우 요청자 확인을 위한 최소 정보만 요청하고 관련 법령의 기한과 절차에 따라 답변합니다. 법령상 제한 사유가 있으면 그 사유와 이의제기 방법을 안내합니다.</p>
+
+    <h2>9. 안전성 확보 조치</h2>
+    <ul>
+      <li>수집 최소화와 기기 내 우선 처리, 운영자 자체 백엔드 미사용</li>
+      <li>iOS 앱 샌드박스·데이터 보호 및 필요한 경우 App Group 접근 범위 사용</li>
+      <li>SDK 통신의 HTTPS/TLS 사용, 운영 계정 접근통제 및 종속성·Privacy Manifest 정기 점검</li>
+      <li>사용자 콘텐츠를 분석 이벤트, 오류 메타데이터, 로그에 넣지 않는 데이터 경계 적용</li>
+        <li>저장 콘텐츠는 iOS App Group 접근 권한을 가진 이 앱의 메인 앱·키보드·공유 확장에만 공유됩니다.</li>
+        <li>앱 자체 추가 암호화가 없으므로 민감정보 저장 금지 안내를 제공하고 저장 텍스트를 분석·충돌 메타데이터에서 제외합니다.</li>
+    </ul>
+
+    <h2>10. 아동 및 대상 연령</h2>
+    <p>현재 앱은 만 13세 미만 아동을 주된 대상으로 기획하거나 운영하지 않으며 아동의 계정·이름·연락처를 수집하지 않습니다.</p>
+
+    <h2>11. 권리구제</h2>
+    <p>먼저 개인정보 보호책임자에게 문의할 수 있으며, 해결되지 않는 경우 <a href="https://www.pipc.go.kr/">개인정보보호위원회</a>, <a href="https://privacy.kisa.or.kr/">개인정보침해 신고센터</a>, <a href="https://www.kopico.go.kr/">개인정보분쟁조정위원회</a>의 상담·신고·조정 절차를 이용할 수 있습니다.</p>
+
+    <h2>12. 방침 변경 및 문의</h2>
+    <p>기능, SDK, 처리 항목 또는 법적 요구가 변경되면 시행 전에 이 페이지나 앱의 배포 정보를 통해 변경 내용을 알립니다. 개인정보 관련 문의: <a href="mailto:hapinesspang@gmail.com">hapinesspang@gmail.com</a></p>
+  </section>
+
+  <hr>
+
+  <section id="en" class="language" lang="en">
+    <h2>CopyBox Privacy Policy</h2>
+    <p class="meta">Effective date: 2026-07-10</p>
+    <p>CopyBox stores clips, snippets, queues, and a keyboard-sharing snapshot as JSON in App Group UserDefaults and does not collect everything typed or send it to an operator server.</p>
+
+    <h2>1. Controller, privacy officer, and purposes</h2>
+    <ul>
+      <li>Operator and controller: Yoobin Shin (hapinesspang)</li>
+      <li>Privacy officer (CPO): Yoobin Shin (hapinesspang)</li>
+      <li>Privacy requests: <a href="mailto:hapinesspang@gmail.com">hapinesspang@gmail.com</a></li>
+    </ul>
+    <p>The app processes the minimum information needed to provide its core features, retain user settings and records on the device, deliver ads, understand app usage, diagnose errors, and improve stability. The app does not provide account creation or login, so there is no developer account data to delete.</p>
+    <p>The app uses Google AdMob ads to remain free and does not offer in-app purchases or subscriptions.</p>
+
+    <h2>2. Information processed on the device</h2>
+    <ul>
+        <li>Clip text, snippets, queue names/order/progress, pinned/used state, and timestamps are JSON-encoded in App Group UserDefaults.</li>
+        <li>A separate keyboard snapshot is also stored in the App Group so the main app, keyboard, and Share extension can use the same library.</li>
+        <li>CopyBox does not continuously monitor or collect the clipboard in the background. It reads the clipboard only when the user explicitly runs a save action or Shortcut.</li>
+        <li>Shortcuts may also add text you provide, copy the next saved queue item, reset queue progress, or open the app.</li>
+        <li>The App Group JSON is covered by iOS sandbox/device data protection but is not additionally encrypted by CopyBox. Avoid storing passwords, one-time codes, financial details, or similarly sensitive information.</li>
+    </ul>
+    <table>
+      <thead><tr><th>Item</th><th>Purpose</th><th>Storage</th><th>Retention</th><th>Deletion</th></tr></thead>
+      <tbody>
+        <tr><td>Clip/snippet text, queue names/order/progress, pin/use state and times</td><td>Store, organize, and sequentially paste clips</td><td>copybox.library.v1 JSON in App Group UserDefaults</td><td>Until the user removes the item/queue or deletes the app</td><td>Delete items/queues in the app or delete the app</td></tr>
+        <tr><td>Keyboard-facing clip and queue snapshot</td><td>Fast lookup and insertion in the keyboard extension</td><td>copybox.keyboardSnapshot.v1 JSON in App Group UserDefaults</td><td>Until the library is updated/deleted or the app is deleted</td><td>Change/delete source-library items or delete the app</td></tr>
+      </tbody>
+    </table>
+    <p>The operator does not collect that on-device content on its own server and intentionally excludes the following from advertising, analytics, and diagnostics events:</p>
+    <ul>
+        <li>Saved clip/snippet text and queue names. The keyboard does not collect everything you type.</li>
+        <li>CopyBox does not provide saved clip text to Google or to a developer server for ad targeting.</li>
+        <li>Analytics events and crash reports do not include saved clip text, snippets, queue names, keyboard input, URLs, email addresses, or manually entered content.</li>
+        <li>Clipboard contents, URLs, emails, and manually entered content</li>
+    </ul>
+
+    <h2>3. Permissions and choices</h2>
+    <table>
+      <thead><tr><th>Permission/choice</th><th>Purpose</th><th>Effect of refusal</th></tr></thead>
+      <tbody>
+        <tr><td>Keyboard Full Access</td><td>Read saved queues/snippets from the App Group and update used state after insertion</td><td>Shared-library/progress features in the CopyBox keyboard are limited; the main app remains usable.</td></tr>
+        <tr><td>Clipboard read</td><td>Save current text when the user invokes a save action or Shortcut</td><td>Only save-from-clipboard actions are unavailable.</td></tr>
+        <tr><td>App Tracking Transparency (ATT)</td><td>Personalized ads and ad measurement when permitted</td><td>Clip and keyboard features remain available; ads may be non-personalized or limited.</td></tr>
+      </tbody>
+    </table>
+    <p>ATT is Apple's tracking permission and does not replace any separate consent for an international transfer required by applicable law. If tracking is allowed, the advertising identifier (IDFA) may be used for personalized ads and ad measurement. Refusing tracking does not disable core on-device features; ads may be non-personalized or limited.</p>
+
+    <h2>4. Advertising, analytics, and crash diagnostics</h2>
+    <p>SDKs/services used: Google AdMob / Google Mobile Ads SDK, Google User Messaging Platform SDK (UMP), Apple App Tracking Transparency (ATT), Google Analytics for Firebase (Firebase Analytics), Firebase Crashlytics</p>
+    <ul>
+      <li>Advertising identifier and app-instance/device IDs; Ad impressions and ad interaction information; Ad request and ad performance information; approximate location inferred from IP address</li>
+      <li>Product interaction and app activity information, including app launches, screen navigation, and feature use; app-instance identifier; device and app-version information</li>
+      <li>Crash, diagnostic, and performance information, including crash stacks, privacy-safe error codes, app/OS/device details, and installation or session identifiers</li>
+    </ul>
+    <p>The app-specific on-device boundaries in Section 2 apply. Operator-defined analytics events and error metadata must not contain that content, filenames, or file paths.</p>
+
+    <h2>5. Third-Party Services and International Processing: processors, SDK direct collection, and disclosure</h2>
+    <table>
+      <thead><tr><th>Category</th><th>Recipient/processor</th><th>Services and purposes</th><th>Method</th></tr></thead>
+      <tbody>
+        <tr><td>Processing service and SDK direct collection</td><td>Google LLC and its published subprocessors</td><td>AdMob/UMP ad delivery and consent; Firebase Analytics usage analytics; Firebase Crashlytics error diagnosis</td><td>The SDK sends necessary information directly over encrypted network connections while the app is used</td></tr>
+        <tr><td>Separate third-party disclosure by the operator</td><td>None</td><td>The operator does not sell or separately disclose on-device content it holds</td><td>Not applicable</td></tr>
+      </tbody>
+    </table>
+    <p>Depending on the service terms and settings, Google SDK integration may include both processing/storage entrusted by the operator and collection by Google as an independent controller. The international-transfer basis below applies to the scope entrusted by the operator; Google's direct collection follows Google's terms, privacy policy, and applicable law. Both are disclosed so users can understand the SDK processing that actually occurs.</p>
+    <p>These services include Google User Messaging Platform SDK, Firebase Analytics, and Firebase Crashlytics.</p>
+
+    <h2>6. International processing by Google</h2>
+    <ul>
+      <li>Legal basis for processing/storage entrusted by the operator for users in Korea: Article 28-8(1)(3)(a) of Korea's Personal Information Protection Act where necessary to form and perform the service contract and disclosed in this policy; Article 28-8(1)(1) where separate international-transfer consent is obtained</li>
+      <li>Google direct collection: PIPC guidance distinguishes collection directly from the data subject by an overseas provider from an international transfer by the domestic controller. That scope follows Google's privacy policy and applicable law and is disclosed here for transparency.</li>
+      <li>Recipient: Google LLC and Google's published subprocessors</li>
+      <li>Contact: <a href="https://support.google.com/policies/answer/9581826?hl=en">Google Privacy Help Center</a>, <a href="https://firebase.google.com/support/privacy/dpo">Firebase Data Protection Team</a></li>
+      <li>Data: advertising, app-instance/device identifiers, product interactions, approximate location, crash, and diagnostic information described in Section 4</li>
+      <li>Countries: the United States and countries where Google or its subprocessors maintain facilities. Firebase services without location selection may use Google's global infrastructure. Current locations are published in the <a href="https://www.google.com/about/datacenters/locations/">Google data-center</a> and <a href="https://firebase.google.com/terms/subprocessors">Firebase subprocessor</a> lists.</li>
+      <li>Timing/method: encrypted network transmission during ad requests, consent updates, analytics events, and error/crash reports</li>
+      <li>Purposes: ad delivery and measurement, fraud prevention, consent management, usage analytics, error diagnosis, and stability</li>
+      <li>Retention: Firebase Analytics user/event data follows the period configured by the operator in Firebase (up to 14 months). Crashlytics begins deleting crash stacks and associated identifiers after 90 days. Advertising, aggregate, and legally required data follow Google policies/settings or remain until the purpose is fulfilled.</li>
+      <li>Refusal and effect: limit personalized ads and tracking using ATT, UMP privacy options, and iOS ad settings, or email the operator to exercise applicable rights. Core on-device features remain available, but ads may be limited/non-personalized and some necessary analytics or diagnostics may continue. Deleting the app stops future SDK transmissions; previously transferred data follows Google's retention rules.</li>
+    </ul>
+    <p>During this processing, the information described above may be processed or stored outside the user's country or region through Google LLC and its subprocessors.</p>
+    <p>References: <a href="https://policies.google.com/privacy?hl=en">Google Privacy Policy</a>, <a href="https://firebase.google.com/support/privacy">Privacy and Security in Firebase</a>, <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">Google Mobile Ads data disclosure</a></p>
+
+    <h2>7. Retention and destruction</h2>
+    <p>On-device information follows the periods in Section 2 and is removed through the app's deletion controls or, subject to iOS behavior, when the app is deleted. The operator has no separate source copy to recover. Temporary files are removed as soon as their purpose is complete or at the app-specific cleanup point. Google-processed information follows Section 6 and Google's deletion process.</p>
+
+    <h2>8. Your rights and how to exercise them</h2>
+    <p>You can view, correct, delete, or reset on-device information in the app. Email <a href="mailto:hapinesspang@gmail.com">hapinesspang@gmail.com</a> to request access, correction/deletion, restriction, withdrawal of consent, or information about international processing. The operator may request only the minimum information needed to verify the requester and will respond under applicable deadlines and procedures. If a legal exception applies, the reason and appeal route will be explained.</p>
+
+    <h2>9. Security measures</h2>
+    <ul>
+      <li>Data minimization, on-device-first processing, and no developer backend</li>
+      <li>iOS app sandbox/data protection and scoped App Group access where required</li>
+      <li>HTTPS/TLS for SDK traffic, access control for operator accounts, and recurring dependency/Privacy Manifest review</li>
+      <li>Data boundaries that exclude user content from analytics events, error metadata, and logs</li>
+        <li>CopyBox uses Firebase Analytics and Firebase Crashlytics in the main app.</li>
+        <li>Google User Messaging Platform SDK, Firebase Analytics, and Firebase Crashlytics may process device identifiers, advertising identifiers if allowed by the user, ad impressions and ad interaction information.</li>
+        <li>Stored content is shared only with this app's main app, keyboard, and Share extension that hold the App Group entitlement.</li>
+        <li>Because there is no extra app-level encryption, users are warned not to store sensitive secrets and stored text is excluded from analytics/crash metadata.</li>
+    </ul>
+
+    <h2>10. Children and target audience</h2>
+    <p>The current app is not designed or operated primarily for children under 13 and collects no child account, name, or contact details.</p>
+
+    <h2>11. Complaints and remedies</h2>
+    <p>Contact the privacy officer first. Users in Korea may also use the consultation, reporting, or mediation procedures of the <a href="https://www.pipc.go.kr/eng/">Personal Information Protection Commission</a>, <a href="https://privacy.kisa.or.kr/">KISA Privacy Infringement Report Center</a>, or <a href="https://www.kopico.go.kr/">Personal Information Dispute Mediation Committee</a>.</p>
+
+    <h2>12. Changes and contact</h2>
+    <p>If features, SDKs, processed items, or legal requirements change, notice will be provided on this page or through app distribution information before the new policy takes effect. Privacy contact: <a href="mailto:hapinesspang@gmail.com">hapinesspang@gmail.com</a></p>
+  </section>
 </body>
 </html>
