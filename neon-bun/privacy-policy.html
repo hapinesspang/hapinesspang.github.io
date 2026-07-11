@@ -37,21 +37,21 @@
 
     <h2>2. 기기 내 처리 정보</h2>
     <ul>
-        <li>게임 진행도, 최고 기록, 오늘의 영업 완료 이력과 사용자 설정은 기기에서 처리하고 저장합니다.</li>
-        <li>전면 광고 노출 빈도를 제한하기 위한 완료 플레이 횟수와 최근 노출 시각은 기기 내 UserDefaults에 저장합니다.</li>
-        <li>광고 동의는 Google User Messaging Platform(UMP)으로 확인하며, ATT를 거부해도 게임 진행과 선택형 보상 광고는 유지됩니다.</li>
+        <li>게임 진행도, 최고 기록, 팁 잔액, 오늘의 영업 완료 이력, 일일 보상형 광고의 100팁 수령 이력과 사용자 설정은 기기에서 처리하고 저장합니다.</li>
+        <li>결과 전면 광고와 App Open 광고의 빈도를 제한하기 위한 완료 플레이 식별자·횟수, 광고 가능 창 시작 시각, 앱 실행 횟수, 백그라운드 체류 시간 판단 상태와 최근 전면 광고 노출 시각은 기기에서 처리하며 필요한 값은 UserDefaults에 저장합니다.</li>
+        <li>Google AdMob 배너·네이티브·전면·App Open·선택형 보상 광고의 동의 상태는 Google User Messaging Platform(UMP)으로 확인하며, ATT를 거부해도 게임 진행과 선택형 보상 광고는 유지됩니다.</li>
     </ul>
     <table>
       <thead><tr><th>항목</th><th>목적</th><th>저장 위치</th><th>보유기간</th><th>삭제 방법</th></tr></thead>
       <tbody>
-        <tr><td>게임 진행도·기록·오늘의 영업 완료 이력</td><td>플레이 이어하기와 기록 유지</td><td>기기 내 앱 저장소</td><td>사용자가 초기화하거나 앱을 삭제할 때까지</td><td>앱 내 초기화 기능 또는 앱 삭제</td></tr>
+        <tr><td>게임 진행도·기록·팁 잔액·오늘의 영업 완료 및 일일 100팁 수령 이력</td><td>플레이 이어하기, 기록 유지와 일일 보상 중복 지급 방지</td><td>기기 내 앱 저장소</td><td>사용자가 초기화하거나 앱을 삭제할 때까지</td><td>앱 내 초기화 기능 또는 앱 삭제</td></tr>
         <tr><td>사용자 설정</td><td>선택한 사운드·햅틱·접근성 설정 유지</td><td>기기 내 앱 저장소</td><td>사용자가 각 설정을 변경하거나 앱을 삭제할 때까지</td><td>앱 설정에서 각 항목 변경 또는 앱 삭제</td></tr>
-        <tr><td>광고 빈도 횟수와 시각</td><td>전면 광고를 완료 플레이 3회 및 8분보다 자주 표시하지 않기 위해</td><td>기기 내 UserDefaults</td><td>앱을 삭제할 때까지</td><td>앱 삭제</td></tr>
+        <tr><td>광고 빈도용 완료 플레이·실행·백그라운드 상태와 노출 시각</td><td>결과 전면 광고를 완료 플레이 2회 및 5분보다 자주 표시하지 않고, App Open 광고를 첫 3회 실행에서 제외하며 30분 이상 비활성 후에도 4시간 간격으로 제한하기 위해</td><td>기기 내 UserDefaults</td><td>앱을 삭제할 때까지</td><td>앱 삭제</td></tr>
       </tbody>
     </table>
     <p>운영자는 위 기기 내 콘텐츠를 자체 서버로 수집하지 않으며 다음 정보를 광고·분석·진단 이벤트에 의도적으로 포함하지 않습니다.</p>
     <ul>
-        <li>게임 진행도와 최고 기록</li>
+        <li>게임 진행도·최고 기록·팁 잔액과 일일 보상 수령 이력</li>
         <li>조작 입력과 플레이 경로</li>
         <li>사용자 설정과 로컬 광고 빈도 기록</li>
     </ul>
@@ -142,21 +142,21 @@
 
     <h2>2. Information processed on the device</h2>
     <ul>
-        <li>Game progress, high scores, Daily Shift completion history, and user settings are processed and stored on the device.</li>
-        <li>Completed-run counts and recent presentation times used to limit interstitial frequency are stored in on-device UserDefaults.</li>
-        <li>Google User Messaging Platform (UMP) manages advertising consent, and declining ATT does not block game progress or optional rewarded ads.</li>
+        <li>Game progress, high scores, tip balance, Daily Shift completion history, one-per-day rewarded 100-tip claim history, and user settings are processed and stored on the device.</li>
+        <li>Completed-run identifiers and counts, eligibility-window time, launch count, background-duration decision state, and recent fullscreen presentation times used to limit result interstitial and App Open frequency are processed on the device, with required values stored in UserDefaults.</li>
+        <li>Google User Messaging Platform (UMP) manages consent for Google AdMob banner, native, interstitial, App Open, and optional rewarded ads, and declining ATT does not block game progress or optional rewards.</li>
     </ul>
     <table>
       <thead><tr><th>Item</th><th>Purpose</th><th>Storage</th><th>Retention</th><th>Deletion</th></tr></thead>
       <tbody>
-        <tr><td>Game progress, records, and Daily Shift completion history</td><td>Resume play and preserve records</td><td>On-device app storage</td><td>Until the user resets the app or deletes it</td><td>Use the in-app reset feature or delete the app</td></tr>
+        <tr><td>Game progress, records, tip balance, Daily Shift completion, and daily 100-tip claim history</td><td>Resume play, preserve records, and prevent duplicate daily reward grants</td><td>On-device app storage</td><td>Until the user resets the app or deletes it</td><td>Use the in-app reset feature or delete the app</td></tr>
         <tr><td>User settings</td><td>Preserve selected sound, haptic, and accessibility preferences</td><td>On-device app storage</td><td>Until the user changes each setting or deletes the app</td><td>Change each item in app settings or delete the app</td></tr>
-        <tr><td>Advertising cadence counts and times</td><td>Prevent interstitials from appearing more often than three completed runs and eight minutes</td><td>On-device UserDefaults</td><td>Until the app is deleted</td><td>Delete the app</td></tr>
+        <tr><td>Completed-run, launch, background, and presentation state for ad cadence</td><td>Keep result interstitials at least two completed runs and five minutes apart, exclude App Open ads from the first three launches, and require at least 30 minutes inactive plus a four-hour App Open cooldown</td><td>On-device UserDefaults</td><td>Until the app is deleted</td><td>Delete the app</td></tr>
       </tbody>
     </table>
     <p>The operator does not collect that on-device content on its own server and intentionally excludes the following from advertising, analytics, and diagnostics events:</p>
     <ul>
-        <li>Game progress and high scores</li>
+        <li>Game progress, high scores, tip balance, and daily reward claim history</li>
         <li>Control input and gameplay paths</li>
         <li>User settings and local advertising cadence records</li>
     </ul>
