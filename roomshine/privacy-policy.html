@@ -23,8 +23,8 @@
 
   <section id="ko" class="language" lang="ko">
     <h1>룸샤인 개인정보 처리방침</h1>
-    <p class="meta">시행일: 2026-07-11</p>
-    <p>룸샤인은 퍼즐 진행 상황, 최고 기록, 부스터와 환경설정을 기기 안에서 처리하며 운영자 자체 서버로 전송하지 않습니다.</p>
+    <p class="meta">시행일: 2026-07-12</p>
+    <p>룸샤인은 퍼즐 진행 상황, 최고 기록, 부스터와 환경설정을 기기에 저장합니다. 앱은 운영자 계정이나 자체 서버를 제공하지 않으며 Google AdMob 광고, Firebase Analytics·Crashlytics와 선택형 Apple Game Center를 사용합니다.</p>
 
     <h2>1. 개인정보처리자, 보호책임자 및 처리 목적</h2>
     <ul>
@@ -44,6 +44,8 @@
         <li>광고 동의 관리에는 Google User Messaging Platform(UMP)을 사용하며, 추적 허용 여부와 관계없이 모든 방·레벨·재도전 기능을 이용할 수 있습니다.</li>
         <li>Firebase Analytics에는 앱 실행과 홈·방·설정·게임 화면, 매치3 캠페인 시작·완료 같은 고정 기능 토큰만 전송하며 레벨 번호, 점수, 별, 남은 이동 수, 부스터 수량, 보드 상태 또는 사용자 입력은 포함하지 않습니다.</li>
         <li>Firebase Crashlytics는 충돌 진단에 사용하며 자유 형식 사용자 내용, 게임 기록, 원시 오류, 파일명 또는 파일 경로를 로그와 오류 정보에 포함하지 않습니다.</li>
+        <li>기기에서 Game Center에 로그인한 경우 앱은 총 별 수를 Apple 리더보드에 제출하고 완료 레벨 수에 따른 네 가지 고정 도전 과제 진행률을 Apple Game Center에 동기화합니다. 로그인하지 않거나 거부해도 모든 퍼즐, 방과 기기 내 진행도·최고 기록을 이용할 수 있으며 Game Center 별명이나 기록을 운영자 서버, Firebase 또는 AdMob으로 보내지 않습니다.</li>
+        <li>네트워크 연결 또는 Game Center 전송이 일시적으로 불가능하면 전송 대기 총 별 수와 완료 레벨 수를 기기 내 UserDefaults에 저장합니다. 대기 정보는 전송 완료 시 자동 삭제되며 설정의 모든 진행 상황 초기화 또는 앱 삭제로도 제거됩니다.</li>
     </ul>
     <table>
       <thead><tr><th>항목</th><th>목적</th><th>저장 위치</th><th>보유기간</th><th>삭제 방법</th></tr></thead>
@@ -51,6 +53,7 @@
         <tr><td>레벨별 별·점수·최고 남은 이동 수, 완료 레벨, 마지막 플레이 레벨</td><td>퍼즐 진행 저장, 다음 레벨 해제, 기록 표시</td><td>기기 내 UserDefaults의 JSON 데이터</td><td>설정에서 초기화하거나 앱을 삭제할 때까지</td><td>설정의 모든 진행 상황 초기화 또는 앱 삭제</td></tr>
         <tr><td>부스터 수량, 일일 광고 부스터 수령일, 첫 실행 안내 상태, 햅틱·소리·움직임 설정, 일일 연속 기록</td><td>게임 기능과 사용자 환경설정 유지</td><td>기기 내 UserDefaults</td><td>초기화·변경하거나 앱을 삭제할 때까지</td><td>설정 초기화 또는 앱 삭제</td></tr>
         <tr><td>최근 전면 광고 표시 시각·횟수와 보상형 광고 직후 건너뛰기 상태</td><td>전면 광고 간격·30분 상한 적용 및 보상형 광고 직후 전면 광고 방지</td><td>기기 내 UserDefaults</td><td>설정에서 모든 진행 상황을 초기화하거나 앱을 삭제할 때까지</td><td>설정의 모든 진행 상황 초기화 또는 앱 삭제</td></tr>
+        <tr><td>Game Center 전송 대기 총 별 수와 완료 레벨 수</td><td>오프라인 또는 일시적인 오류 뒤 리더보드 점수와 도전 과제 진행률 다시 전송</td><td>기기 내 UserDefaults</td><td>전송 완료, 설정의 모든 진행 상황 초기화 또는 앱 삭제까지</td><td>전송 완료 시 자동 삭제, 설정의 모든 진행 상황 초기화 또는 앱 삭제</td></tr>
       </tbody>
     </table>
     <p>운영자는 위 기기 내 콘텐츠를 자체 서버로 수집하지 않으며 다음 정보를 광고·분석·진단 이벤트에 의도적으로 포함하지 않습니다.</p>
@@ -59,6 +62,7 @@
         <li>부스터 수량과 일일 연속 기록</li>
         <li>햅틱·소리·움직임 환경설정</li>
         <li>퍼즐 보드 상태와 사용자가 선택한 이동</li>
+        <li>Game Center 별명과 리더보드·도전 과제 기록은 운영자 서버·Firebase·AdMob에 전송하지 않음</li>
     </ul>
 
     <h2>3. 권한과 선택권</h2>
@@ -66,6 +70,7 @@
       <thead><tr><th>권한/선택</th><th>사용 목적</th><th>거부 시 영향</th></tr></thead>
       <tbody>
         <tr><td>App Tracking Transparency(ATT)</td><td>허용 시 개인화 광고와 광고 성과 측정</td><td>거부해도 모든 퍼즐과 방을 이용할 수 있으며 광고가 비개인화·제한될 수 있습니다.</td></tr>
+        <tr><td>Apple Game Center</td><td>선택형 로그인 상태에서 총 별 수와 완료 레벨 기반 도전 과제 진행률을 Apple에 동기화</td><td>로그인하지 않거나 거부해도 모든 퍼즐·방과 기기 내 진행도·최고 기록을 사용할 수 있습니다.</td></tr>
       </tbody>
     </table>
     <p>ATT는 Apple의 추적 권한이며 개인정보 국외 이전에 관한 별도 동의를 대신하지 않습니다. 사용자가 추적을 허용하면 광고 식별자(IDFA)가 개인화 광고와 광고 성과 측정에 사용될 수 있습니다. 추적을 거부해도 앱의 핵심 기기 내 기능은 사용할 수 있으며 광고는 개인화되지 않거나 제한된 형태로 표시될 수 있습니다.</p>
@@ -119,6 +124,7 @@
         <li>진행 데이터는 iOS 앱 샌드박스 안에 보관하고 광고 요청·진단 정보에 퍼즐 기록이나 설정값을 넣지 않습니다.</li>
         <li>분석 이벤트는 AppTelemetryKit의 개인정보 안전 토큰 API만 사용하며 레벨 번호, 점수, 별, 남은 이동 수, 부스터 수량, 보드 상태, 선택한 이동 또는 환경설정 값을 Analytics나 Crashlytics에 전달하지 않습니다.</li>
         <li>XCTest, UI 테스트, 스크린샷, CI placeholder와 광고 비활성화 실행에서는 Firebase 수집을 초기화하지 않습니다.</li>
+        <li>Game Center에는 총 별 수와 완료 레벨 기반 고정 도전 과제 진행률만 제출하며 별명이나 기록을 Firebase·AdMob 또는 운영자 서버와 결합하지 않습니다.</li>
     </ul>
 
     <h2>10. 아동 및 대상 연령</h2>
@@ -135,8 +141,8 @@
 
   <section id="en" class="language" lang="en">
     <h2>Roomshine Privacy Policy</h2>
-    <p class="meta">Effective date: 2026-07-11</p>
-    <p>Roomshine processes puzzle progress, best results, boosters, and preferences on the device and does not send them to an operator-run server.</p>
+    <p class="meta">Effective date: 2026-07-12</p>
+    <p>Roomshine stores puzzle progress, best results, boosters, and preferences on the device. The app has no operator account or developer server and uses Google AdMob advertising, Firebase Analytics and Crashlytics, plus optional Apple Game Center.</p>
 
     <h2>1. Controller, privacy officer, and purposes</h2>
     <ul>
@@ -156,6 +162,8 @@
         <li>Google User Messaging Platform (UMP) manages advertising consent. Every room, level, and retry remains available regardless of the tracking choice.</li>
         <li>Firebase Analytics receives only fixed feature tokens for app launch, Home, Rooms, Settings, and Game screens, and match-3 campaign start/completion; it does not receive level numbers, scores, stars, remaining moves, booster counts, board state, or player input.</li>
         <li>Firebase Crashlytics is used for crash diagnosis, and free-form user content, gameplay records, raw errors, filenames, and file paths are excluded from logs and error details.</li>
+        <li>When the device is signed in to Game Center, the app submits the Total Stars count to an Apple leaderboard and synchronizes progress for four fixed achievements based on completed levels. Declining sign-in leaves every puzzle, room, and local progress/best result available, and Game Center nicknames or records are not sent to the operator server, Firebase, or AdMob.</li>
+        <li>If network access or Game Center delivery is temporarily unavailable, pending Total Stars and completed-level counts are stored in on-device UserDefaults. Pending information is removed automatically after delivery and can also be removed with Reset all progress or app deletion.</li>
     </ul>
     <table>
       <thead><tr><th>Item</th><th>Purpose</th><th>Storage</th><th>Retention</th><th>Deletion</th></tr></thead>
@@ -163,6 +171,7 @@
         <tr><td>Per-level stars, scores, best remaining moves, completed levels, and last-played level</td><td>Save puzzle progress, unlock the next level, and show best results</td><td>JSON data in on-device UserDefaults</td><td>Until reset in Settings or the app is deleted</td><td>Reset all progress in Settings or delete the app</td></tr>
         <tr><td>Booster counts, daily ad-booster claim day, welcome state, haptics/sound/motion preferences, and daily streak state</td><td>Preserve gameplay features and user preferences</td><td>On-device UserDefaults</td><td>Until reset, changed, or the app is deleted</td><td>Reset settings or delete the app</td></tr>
         <tr><td>Recent interstitial timestamps and counts, and the skip-after-rewarded state</td><td>Enforce interstitial spacing and the 30-minute cap, and prevent an interstitial immediately after a rewarded ad</td><td>On-device UserDefaults</td><td>Until Reset all progress is used or the app is deleted</td><td>Reset all progress in Settings or delete the app</td></tr>
+        <tr><td>Pending Game Center Total Stars and completed-level counts</td><td>Retry the leaderboard score and achievement progress after an offline period or temporary error</td><td>On-device UserDefaults</td><td>Until delivery completes, Reset all progress is used, or the app is deleted</td><td>Automatic removal after delivery, Reset all progress in Settings, or app deletion</td></tr>
       </tbody>
     </table>
     <p>The operator does not collect that on-device content on its own server and intentionally excludes the following from advertising, analytics, and diagnostics events:</p>
@@ -171,6 +180,7 @@
         <li>Booster counts and daily streak state</li>
         <li>Haptics, sound, and motion preferences</li>
         <li>Puzzle board states and player-selected moves</li>
+        <li>Game Center nicknames, leaderboard scores, and achievement progress are not sent to the operator server, Firebase, or AdMob</li>
     </ul>
 
     <h2>3. Permissions and choices</h2>
@@ -178,6 +188,7 @@
       <thead><tr><th>Permission/choice</th><th>Purpose</th><th>Effect of refusal</th></tr></thead>
       <tbody>
         <tr><td>App Tracking Transparency (ATT)</td><td>Personalized ads and ad measurement when allowed</td><td>All puzzles and rooms remain available; ads may be non-personalized or limited.</td></tr>
+        <tr><td>Apple Game Center</td><td>Synchronize Total Stars and completed-level achievement progress with Apple when optionally signed in</td><td>All puzzles, rooms, and local progress/best results remain available when sign-in is declined or unavailable.</td></tr>
       </tbody>
     </table>
     <p>ATT is Apple's tracking permission and does not replace any separate consent for an international transfer required by applicable law. If tracking is allowed, the advertising identifier (IDFA) may be used for personalized ads and ad measurement. Refusing tracking does not disable core on-device features; ads may be non-personalized or limited.</p>
@@ -233,6 +244,7 @@
         <li>Progress remains inside the iOS app sandbox, and puzzle records or preference values are not included in ad requests or diagnostic metadata.</li>
         <li>Analytics events use only AppTelemetryKit's privacy-safe token APIs and do not send level numbers, scores, stars, remaining moves, booster counts, board state, selected moves, or preference values to Analytics or Crashlytics.</li>
         <li>Firebase collection is not initialized for XCTest, UI-test, screenshot, CI-placeholder, or ad-disabled launches.</li>
+        <li>Game Center receives only Total Stars and fixed achievement progress based on completed levels, and nicknames or records are not combined with Firebase, AdMob, or an operator server.</li>
     </ul>
 
     <h2>10. Children and target audience</h2>
